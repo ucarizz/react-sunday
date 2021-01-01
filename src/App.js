@@ -24,7 +24,6 @@ class App extends Component {
         movingCount: ++this.state.movingCount,
       });
 
-      console.log(this.state.movingCount);
     }
 
     var result = this.control();
@@ -33,10 +32,10 @@ class App extends Component {
         gameStatus: true,
         winning: "X",
       });
-    } else if (result === "Y") {
+    } else if (result === "O") {
       this.setState({
         gameStatus: true,
-        winning: "Y",
+        winning: "O",
       });
     } else if(this.state.movingCount === 9){
       this.setState({
@@ -44,7 +43,7 @@ class App extends Component {
         winning: "Scoreless",
       });
     }
-    console.log(result);
+    
   }
   control() {
     var board = this.state.board;
